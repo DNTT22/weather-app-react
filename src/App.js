@@ -6,6 +6,7 @@ function App() {
   const [location, setLocation] = useState('')
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=895284fb2d2c50a520ea537456963d9c`
+  //const url ='http://api.openweathermap.org/geo/1.0/direct?q=${location}&appid=4c190063cc2f103924ee1243b2cdb9ca'
 
   const searchLocation = (event) => {
     if (event.key === 'Enter') {
@@ -24,7 +25,7 @@ function App() {
           value={location}
           onChange={event => setLocation(event.target.value)}
           onKeyPress={searchLocation}
-          placeholder='Enter Location'
+          placeholder='Location?'
           type="text" />
       </div>
       <div className="container">
@@ -52,7 +53,7 @@ function App() {
             </div>
             <div className="wind">
               {data.wind ? <p className='bold'>{data.wind.speed.toFixed()} MPH</p> : null}
-              <p>Wind Speed</p>
+              <p>Wind Velocity</p>
             </div>
           </div>
         }
